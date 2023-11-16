@@ -18,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
+Route::group(['prefix' => 'auth'], function ($router) {
+    Route::post('register', [\App\Http\Controllers\AuthController::class,'register']);
+    Route::post('active-user', [\App\Http\Controllers\AuthController::class,'userActive']);
     Route::post('login', [\App\Http\Controllers\AuthController::class,'login']);
     Route::post('logout', [\App\Http\Controllers\AuthController::class,'logout']);
 //    Route::post('refresh', 'AuthController@refresh');
     Route::get('profile', [\App\Http\Controllers\AuthController::class,'profile']);
+    Route::post('reset-otp', [\App\Http\Controllers\AuthController::class,'resetOtpEmail']);
 });

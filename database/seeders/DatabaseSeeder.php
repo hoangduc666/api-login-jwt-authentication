@@ -21,10 +21,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::create([
-            'name' => 'Duc',
-            'email' => 'duc@gmail.com',
-            'password' => Hash::make('123456'),
-        ]);
+//        User::create([
+//            'name' => 'Duc',
+//            'email' => 'duc@gmail.com',
+//            'password' => Hash::make(123456),
+//        ]);
+//        User::where('email', 'example@example.com')->update([
+//            'password' => 'your_new_password',
+//        ]);
+
     }
 }
